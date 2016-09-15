@@ -22237,30 +22237,6 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	{/*import React from 'react';
-	  
-	  export class FootBallTeamItem extends React.Component  {
-	    render() {
-	     let image = {width: 100, height:100}
-	     
-	     return <div className="football-teams">
-	       {console.log(this.props.teams)}
-	     {/* problems with this - i need to work on the map  
-	       {this.props.teams.map((props, index) => {
-	             return (
-	                 <div>
-	                   <img src={this.props.teams[0].crest} style={image } />
-	                   <p>{this.props.teams[0].name}</p>
-	                 </div>
-	               )
-	         })}  
-	         </div>
-	     
-	   };
-	  }
-	  export default FootBallTeamItem;
-	  */}
-	
 	var FootBallTeamItem = exports.FootBallTeamItem = function (_React$Component) {
 	  _inherits(FootBallTeamItem, _React$Component);
 	
@@ -22274,6 +22250,7 @@
 	    key: "render",
 	    value: function render() {
 	      var image = { width: 100, height: 100 };
+	      {/* need to  add a click handler - passes information to editiableFootball component and scroll too */}
 	      var footyTeams = this.props.teams;
 	      return _react2.default.createElement(
 	        "div",
