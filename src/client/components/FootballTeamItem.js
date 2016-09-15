@@ -6,7 +6,7 @@ export class FootBallTeamItem extends React.Component  {
   render() {
     return <div className="football-teams">
       {console.log(this.props.teams)}
-    {/* problems */}
+    {/* problems with this - i need to work on the map  */}
       {this.props.teams.map((props, index) => {
             return (
                 <div>
