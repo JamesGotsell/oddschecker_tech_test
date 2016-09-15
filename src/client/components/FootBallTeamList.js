@@ -6,7 +6,8 @@ export class FootBallTeamList extends React.Component  {
     return (
         <div>
           <FootBallTeamItem teams={this.props.teams.clubs} />
-          {console.log(this.props.teams.clubs[0]) }
+          {/*console.log(this.props.teams.clubs[0])
+          <FootBallTeamItem teams={teams} key={i} /> */ }
         </div>
     ) 
   };

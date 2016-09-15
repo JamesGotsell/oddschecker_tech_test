@@ -61,6 +61,10 @@
 	
 	var _FootBallTeamList2 = _interopRequireDefault(_FootBallTeamList);
 	
+	var _EditiableFootballTeam = __webpack_require__(/*! ../components/EditiableFootballTeam */ 175);
+	
+	var _EditiableFootballTeam2 = _interopRequireDefault(_EditiableFootballTeam);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -78,8 +82,8 @@
 	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 	
 	    _this.state = __webpack_require__(/*! ../football-teams */ 172);
-	    console.log(_this.state);
-	    console.log(_this.state.props);
+	    //console.log(this.state)
+	    //console.log(this.state.props)
 	    return _this;
 	  }
 	
@@ -94,6 +98,7 @@
 	          null,
 	          this.state.name
 	        ),
+	        _react2.default.createElement(_EditiableFootballTeam2.default, null),
 	        _react2.default.createElement(
 	          'p',
 	          null,
@@ -22194,8 +22199,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_FootBallTeamItem2.default, { teams: this.props.teams.clubs }),
-	        console.log(this.props.teams.clubs[0])
+	        _react2.default.createElement(_FootBallTeamItem2.default, { teams: this.props.teams.clubs })
 	      );
 	    }
 	  }]);
@@ -22233,6 +22237,30 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	{/*import React from 'react';
+	  
+	  export class FootBallTeamItem extends React.Component  {
+	    render() {
+	     let image = {width: 100, height:100}
+	     
+	     return <div className="football-teams">
+	       {console.log(this.props.teams)}
+	     {/* problems with this - i need to work on the map  
+	       {this.props.teams.map((props, index) => {
+	             return (
+	                 <div>
+	                   <img src={this.props.teams[0].crest} style={image } />
+	                   <p>{this.props.teams[0].name}</p>
+	                 </div>
+	               )
+	         })}  
+	         </div>
+	     
+	   };
+	  }
+	  export default FootBallTeamItem;
+	  */}
+	
 	var FootBallTeamItem = exports.FootBallTeamItem = function (_React$Component) {
 	  _inherits(FootBallTeamItem, _React$Component);
 	
@@ -22245,21 +22273,20 @@
 	  _createClass(FootBallTeamItem, [{
 	    key: "render",
 	    value: function render() {
-	      var _this2 = this;
-	
+	      var image = { width: 100, height: 100 };
+	      var footyTeams = this.props.teams;
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "football-teams" },
-	        console.log(this.props.teams),
-	        this.props.teams.map(function (props, index) {
+	        footyTeams.map(function (team, i) {
 	          return _react2.default.createElement(
 	            "div",
 	            null,
-	            _react2.default.createElement("img", { src: _this2.props.teams[0].crest }),
+	            _react2.default.createElement("img", { src: team.crest, style: image }),
 	            _react2.default.createElement(
 	              "p",
 	              null,
-	              _this2.props.teams[0].name
+	              team.name
 	            )
 	          );
 	        })
@@ -22271,6 +22298,63 @@
 	}(_react2.default.Component);
 	
 	exports.default = FootBallTeamItem;
+
+/***/ },
+/* 175 */
+/*!********************************************************!*\
+  !*** ./src/client/components/EditiableFootballTeam.js ***!
+  \********************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.EditiableFootBallTeam = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var EditiableFootBallTeam = exports.EditiableFootBallTeam = function (_React$Component) {
+	  _inherits(EditiableFootBallTeam, _React$Component);
+	
+	  function EditiableFootBallTeam() {
+	    _classCallCheck(this, EditiableFootBallTeam);
+	
+	    return _possibleConstructorReturn(this, (EditiableFootBallTeam.__proto__ || Object.getPrototypeOf(EditiableFootBallTeam)).apply(this, arguments));
+	  }
+	
+	  _createClass(EditiableFootBallTeam, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "editiable-football-teams" },
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          " i need to display the team the user clicks in the grid so the user can update the data - input boxes that displays the information - with the img floated next to it"
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return EditiableFootBallTeam;
+	}(_react2.default.Component);
+	
+	exports.default = EditiableFootBallTeam;
 
 /***/ }
 /******/ ]);
