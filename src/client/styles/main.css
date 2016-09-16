@@ -1,0 +1,20 @@
+html {
+  width: 100%;
+}
+
+
+.football-teams {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.teams {
+   border: 1px solid;
+   margin-right: 5px;
+
+}
+
+div.teams img {
+   margin-top: 5px;
+} 

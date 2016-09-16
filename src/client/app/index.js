@@ -4,6 +4,8 @@ import { render } from 'react-dom';
 import FootBallTeamList from '../components/FootBallTeamList'
 import EditiableFootballTeam from '../components/EditiableFootballTeam'
 
+import styles from '../styles/main.css'
+
 class App extends React.Component {
 
   constructor(props) {
@@ -17,7 +19,7 @@ class App extends React.Component {
     return (
       <div>
           <h2>{this.state.name}</h2>
-          <EditiableFootballTeam />
+          <EditiableFootballTeam defaultTeam={this.state} />
           <p>basic app component</p>
           <FootBallTeamList teams={this.state} />
       </div>

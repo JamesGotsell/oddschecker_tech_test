@@ -3,7 +3,7 @@ import React from 'react';
 
 
 export class FootBallTeamItem extends React.Component  {
-
+ 
   render() {
     let image = {width: 100, height:100}
 

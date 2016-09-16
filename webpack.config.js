@@ -3,6 +3,8 @@ var path = require('path');
 
 var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 var APP_DIR   = path.resolve(__dirname, 'src/client/app');
+var STYLE_DIR = path.resolve(__dirname, 'src/styles')
+
 
 var config = {
   entry: APP_DIR + '/index.js',
@@ -10,6 +12,9 @@ var config = {
     path: BUILD_DIR,
     filename: 'bundle.js'
   },
+
+
+
   module : {
     loaders: [
          {
@@ -19,7 +24,14 @@ var config = {
            query: {
              presets: ['es2015']
            }
-         }
+         },
+         {
+            
+           test: /\.css$/,
+           loaders: ['style', 'css', 'sass'],
+                     
+           //include: STYLE_DIR,
+          }
        ]
   }
 };
