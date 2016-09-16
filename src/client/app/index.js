@@ -16,7 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-          <h1>{this.state.name}</h1>
+          <h2>{this.state.name}</h2>
           <EditiableFootballTeam />
           <p>basic app component</p>
           <FootBallTeamList teams={this.state} />

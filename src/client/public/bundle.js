@@ -94,7 +94,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h1',
+	          'h2',
 	          null,
 	          this.state.name
 	        ),
@@ -22250,6 +22250,7 @@
 	    key: "render",
 	    value: function render() {
 	      var image = { width: 100, height: 100 };
+	
 	      {/* need to  add a click handler - passes information to editiableFootball component and scroll too */}
 	      var footyTeams = this.props.teams;
 	      return _react2.default.createElement(
@@ -22258,7 +22259,7 @@
 	        footyTeams.map(function (team, i) {
 	          return _react2.default.createElement(
 	            "div",
-	            null,
+	            { className: "teams" },
 	            _react2.default.createElement("img", { src: team.crest, style: image }),
 	            _react2.default.createElement(
 	              "p",
