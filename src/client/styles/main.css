@@ -3,13 +3,18 @@ html {
 }
 
 
+
+
 .football-teams {
+  margin: auto;
+  width: 50%;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
 }
 
 .teams {
+  width: 100px;
    border: 1px solid;
    margin-right: 5px;
 

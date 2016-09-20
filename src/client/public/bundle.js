@@ -61,11 +61,7 @@
 	
 	var _FootBallTeamList2 = _interopRequireDefault(_FootBallTeamList);
 	
-	var _EditiableFootballTeam = __webpack_require__(/*! ../components/EditiableFootballTeam */ 174);
-	
-	var _EditiableFootballTeam2 = _interopRequireDefault(_EditiableFootballTeam);
-	
-	var _main = __webpack_require__(/*! ../styles/main.css */ 175);
+	var _main = __webpack_require__(/*! ../styles/main.css */ 174);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
@@ -85,9 +81,10 @@
 	
 	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 	
-	    _this.state = __webpack_require__(/*! ../football-teams */ 179);
+	    _this.state = __webpack_require__(/*! ../football-teams */ 178);
 	    //console.log(this.state)
 	    //console.log(this.state.props)
+	
 	    return _this;
 	  }
 	
@@ -96,13 +93,12 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'wrapper' },
 	        _react2.default.createElement(
 	          'h2',
 	          null,
 	          this.state.name
 	        ),
-	        _react2.default.createElement(_EditiableFootballTeam2.default, { defaultTeam: this.state }),
 	        _react2.default.createElement(
 	          'p',
 	          null,
@@ -22022,7 +22018,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _FootBallTeamItem = __webpack_require__(/*! ./FootBallTeamItem */ 173);
+	var _FootBallTeamItem = __webpack_require__(/*! ./FootBallTeamItem */ 179);
 	
 	var _FootBallTeamItem2 = _interopRequireDefault(_FootBallTeamItem);
 	
@@ -22046,6 +22042,7 @@
 	  _createClass(FootBallTeamList, [{
 	    key: 'render',
 	    value: function render() {
+	
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -22061,74 +22058,6 @@
 
 /***/ },
 /* 173 */
-/*!***************************************************!*\
-  !*** ./src/client/components/FootBallTeamItem.js ***!
-  \***************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.FootBallTeamItem = undefined;
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var FootBallTeamItem = exports.FootBallTeamItem = function (_React$Component) {
-	  _inherits(FootBallTeamItem, _React$Component);
-	
-	  function FootBallTeamItem() {
-	    _classCallCheck(this, FootBallTeamItem);
-	
-	    return _possibleConstructorReturn(this, (FootBallTeamItem.__proto__ || Object.getPrototypeOf(FootBallTeamItem)).apply(this, arguments));
-	  }
-	
-	  _createClass(FootBallTeamItem, [{
-	    key: "render",
-	    value: function render() {
-	      var image = { width: 100, height: 100 };
-	
-	      {/* need to  add a click handler - passes information to editiableFootball component and scroll too */}
-	      var footyTeams = this.props.teams;
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "football-teams" },
-	        footyTeams.map(function (team, i) {
-	          return _react2.default.createElement(
-	            "div",
-	            { className: "teams" },
-	            _react2.default.createElement("img", { src: team.crest, style: image }),
-	            _react2.default.createElement(
-	              "p",
-	              null,
-	              team.name
-	            )
-	          );
-	        })
-	      );
-	    }
-	  }]);
-	
-	  return FootBallTeamItem;
-	}(_react2.default.Component);
-	
-	exports.default = FootBallTeamItem;
-
-/***/ },
-/* 174 */
 /*!********************************************************!*\
   !*** ./src/client/components/EditiableFootballTeam.js ***!
   \********************************************************/
@@ -22158,22 +22087,53 @@
 	var EditiableFootBallTeam = exports.EditiableFootBallTeam = function (_React$Component) {
 	  _inherits(EditiableFootBallTeam, _React$Component);
 	
-	  function EditiableFootBallTeam() {
+	  function EditiableFootBallTeam(props) {
 	    _classCallCheck(this, EditiableFootBallTeam);
 	
-	    return _possibleConstructorReturn(this, (EditiableFootBallTeam.__proto__ || Object.getPrototypeOf(EditiableFootBallTeam)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (EditiableFootBallTeam.__proto__ || Object.getPrototypeOf(EditiableFootBallTeam)).call(this, props));
+	
+	    console.log(_this.props);
+	    return _this;
 	  }
 	
 	  _createClass(EditiableFootBallTeam, [{
 	    key: "render",
 	    value: function render() {
+	
 	      return _react2.default.createElement(
 	        "div",
-	        { className: "editiable-football-teams" },
+	        { id: "editiable-football-teams" },
 	        _react2.default.createElement(
 	          "p",
 	          null,
-	          " i need to display the team the user clicks in the grid so the user can update the data - input boxes that displays the information - with the img floated next to it"
+	          "For communication between two components that don't have a parent-child relationship, you can set up your own global event system. Subscribe to events in componentDidMount(), unsubscribe in componentWillUnmount(), and call setState() when you receive an event. Flux pattern is one of the possible ways to arrange this."
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "EditableTeams" },
+	          _react2.default.createElement("img", { src: this.props }),
+	          _react2.default.createElement(
+	            "form",
+	            null,
+	            _react2.default.createElement(
+	              "label",
+	              null,
+	              "Position"
+	            ),
+	            _react2.default.createElement("input", { type: "text", name: "position", placeholder: this.props }),
+	            _react2.default.createElement(
+	              "label",
+	              null,
+	              "Next fixture"
+	            ),
+	            _react2.default.createElement("input", { type: "text", name: "next_fixture", placeholder: this.props }),
+	            _react2.default.createElement(
+	              "label",
+	              null,
+	              "Last 5 fixtures"
+	            ),
+	            _react2.default.createElement("input", { type: "text", name: "last_5_fixtures", placeholder: this.props })
+	          )
 	        )
 	      );
 	    }
@@ -22185,7 +22145,7 @@
 	exports.default = EditiableFootBallTeam;
 
 /***/ },
-/* 175 */
+/* 174 */
 /*!************************************!*\
   !*** ./src/client/styles/main.css ***!
   \************************************/
@@ -22194,10 +22154,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./main.css */ 176);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./main.css */ 175);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 178)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22214,24 +22174,24 @@
 	}
 
 /***/ },
-/* 176 */
+/* 175 */
 /*!*******************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/client/styles/main.css ***!
   \*******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 177)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 176)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "html {\n  width: 100%; }\n\n.football-teams {\n  text-align: center;\n  display: flex;\n  flex-wrap: wrap; }\n\n.teams {\n  border: 1px solid;\n  margin-right: 5px; }\n\ndiv.teams img {\n  margin-top: 5px; }\n", ""]);
+	exports.push([module.id, "html {\n  width: 100%; }\n\n.football-teams {\n  margin: auto;\n  width: 50%;\n  text-align: center;\n  display: flex;\n  flex-wrap: wrap; }\n\n.teams {\n  width: 100px;\n  border: 1px solid;\n  margin-right: 5px; }\n\ndiv.teams img {\n  margin-top: 5px; }\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 177 */
+/* 176 */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
   \**************************************/
@@ -22290,7 +22250,7 @@
 
 
 /***/ },
-/* 178 */
+/* 177 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/
@@ -22545,7 +22505,7 @@
 
 
 /***/ },
-/* 179 */
+/* 178 */
 /*!**************************************!*\
   !*** ./src/client/football-teams.js ***!
   \**************************************/
@@ -22697,6 +22657,100 @@
 	    "crest": "https://hdlogo.files.wordpress.com/2013/11/west-ham.png"
 	  }]
 	};
+
+/***/ },
+/* 179 */
+/*!***************************************************!*\
+  !*** ./src/client/components/FootBallTeamItem.js ***!
+  \***************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.FootBallTeamItem = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _EditiableFootballTeam = __webpack_require__(/*! ./EditiableFootballTeam */ 173);
+	
+	var _EditiableFootballTeam2 = _interopRequireDefault(_EditiableFootballTeam);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var FootBallTeamItem = exports.FootBallTeamItem = function (_React$Component) {
+	  _inherits(FootBallTeamItem, _React$Component);
+	
+	  function FootBallTeamItem(props) {
+	    _classCallCheck(this, FootBallTeamItem);
+	
+	    var _this = _possibleConstructorReturn(this, (FootBallTeamItem.__proto__ || Object.getPrototypeOf(FootBallTeamItem)).call(this, props));
+	
+	    console.log(_this.props);
+	    return _this;
+	  }
+	
+	  _createClass(FootBallTeamItem, [{
+	    key: 'handleClick',
+	    value: function handleClick(i) {
+	      // i need to make sure the correct props are getting passed into the 
+	      // editableFootballTeam - started - i can understand why the 
+	      console.log('You clicked: ' + this.props);
+	      // console.log(this.props[0])
+	      var selectedTeam = Object.assign({}, this);
+	      console.log(selectedTeam);
+	      //this.props = selectedTeam
+	      //console.log(this.props + " " + "selectedTeam")
+	      var el = document.querySelector('#editiable-football-teams');
+	      el.scrollIntoView();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var image = { width: 100, height: 100 };
+	      var footyTeams = this.props.teams;
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_EditiableFootballTeam2.default, { selectedTeam: this.selectedTeam }),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'football-teams' },
+	          footyTeams.map(function (team, i) {
+	            return _react2.default.createElement(
+	              'div',
+	              { className: 'teams', onClick: _this2.handleClick.bind(team, i), key: i },
+	              _react2.default.createElement('img', { src: team.crest, style: image }),
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                team.name
+	              )
+	            );
+	          })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return FootBallTeamItem;
+	}(_react2.default.Component);
+	
+	exports.default = FootBallTeamItem;
 
 /***/ }
 /******/ ]);
